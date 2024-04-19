@@ -10,13 +10,16 @@ class PixelAdventure extends FlameGame {
   Color backgroundColor() => const Color(0xFF211F30);
 
   late final CameraComponent cam;
-  late final world = Level();
+  @override
+  final world = Level();
 
   @override
   FutureOr<void> onLoad() {
     cam = CameraComponent.withFixedResolution(
-        world: world, width: 640, height: 360);
-
+      world: world,
+      width: 640,
+      height: 360,
+    );
     cam.viewfinder.anchor = Anchor.topLeft;
 
     addAll([cam, world]);
