@@ -13,7 +13,7 @@ class Player extends SpriteAnimationGroupComponent
   String character;
   Player({
     super.position,
-    required this.character,
+    this.character = "Ninja Frog",
   });
 
   late final SpriteAnimation idleAnimation;
@@ -43,6 +43,7 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.arrowLeft);
     final isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
         keysPressed.contains(LogicalKeyboardKey.arrowRight);
+
     if (isLeftKeyPressed && isRightKeyPressed) {
       playerDirection = PlayerDirection.none;
     } else if (isLeftKeyPressed) {
