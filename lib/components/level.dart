@@ -20,8 +20,20 @@ class Level extends World {
     level = await TiledComponent.load("$levelName.tmx", Vector2.all(16));
 
     add(level);
-    final spawnPointsLayer = level.tileMap.getLayer<ObjectGroup>("Spawnpoints");
 
+    _scrollingBackground();
+    _spawningObjects();
+    _addCollisions();
+
+    return super.onLoad();
+  }
+
+  void _scrollingBackground() {
+    //
+  }
+
+  void _spawningObjects() {
+    final spawnPointsLayer = level.tileMap.getLayer<ObjectGroup>("Spawnpoints");
     if (spawnPointsLayer != null) {
       for (final spawnPoint in spawnPointsLayer.objects) {
         switch (spawnPoint.class_) {
@@ -33,9 +45,10 @@ class Level extends World {
         }
       }
     }
+  }
 
+  void _addCollisions() {
     final collisionsLayer = level.tileMap.getLayer<ObjectGroup>("Collisions");
-
     if (collisionsLayer != null) {
       for (final collision in collisionsLayer.objects) {
         switch (collision.class_) {
@@ -60,6 +73,5 @@ class Level extends World {
     }
 
     player.collisionBlocks = collisionBlocks;
-    return super.onLoad();
   }
 }
