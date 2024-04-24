@@ -66,6 +66,7 @@ flutter:
     - assets/images/Terrain/
     - assets/images/Background/
     - assets/images/Items/Fruits/
+    - assets/images/Items/Checkpoints/Checkpoint/
     - assets/images/Traps/Saw/
     - assets/images/Main Characters/
     - assets/images/Main Characters/Mask Dude/
