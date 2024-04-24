@@ -15,7 +15,7 @@ class Fruit extends SpriteAnimationComponent
     this.fruit = "Apple",
   });
 
-  bool _collided = false;
+  bool collided = false;
   final double stepTime = 0.05;
   final hitbox = CustomHitBox(
     offsetX: 10,
@@ -25,12 +25,10 @@ class Fruit extends SpriteAnimationComponent
   );
   @override
   FutureOr<void> onLoad() {
-    collidedWithPlayer();
     add(RectangleHitbox(
       position: Vector2(hitbox.offsetX, hitbox.offsetY),
       size: Vector2(hitbox.width, hitbox.height),
       collisionType: CollisionType.passive,
-      priority: -1,
     ));
     animation = SpriteAnimation.fromFrameData(
         game.images.fromCache("Items/Fruits/$fruit.png"),
@@ -43,7 +41,7 @@ class Fruit extends SpriteAnimationComponent
   }
 
   void collidedWithPlayer() {
-    if (!_collided) {
+    if (!collided) {
       animation = SpriteAnimation.fromFrameData(
         game.images.fromCache("Items/Fruits/Collected.png"),
         SpriteAnimationData.sequenced(
@@ -53,6 +51,7 @@ class Fruit extends SpriteAnimationComponent
           loop: false,
         ),
       );
+      collided = true;
     }
   }
 }
