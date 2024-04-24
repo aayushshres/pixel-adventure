@@ -31,22 +31,22 @@
 24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24
 </data>
  </layer>
- <objectgroup id="3" name="Collisions" visible="0">
+ <objectgroup id="3" name="Collisions">
   <object id="4" x="32" y="32" width="16" height="304"/>
   <object id="5" x="32" y="320" width="576" height="16"/>
   <object id="7" x="592" y="32" width="16" height="304"/>
   <object id="8" x="32" y="32" width="576" height="16"/>
-  <object id="33" type="Platform" x="48" y="96" width="48" height="16"/>
+  <object id="33" type="Platform" x="48" y="96" width="64" height="16"/>
   <object id="35" x="48" y="208" width="32" height="32"/>
   <object id="36" x="48" y="240" width="32" height="32"/>
   <object id="37" x="48" y="272" width="544" height="48"/>
-  <object id="38" type="Platform" x="48" y="144" width="48" height="16"/>
-  <object id="39" type="Platform" x="224" y="96" width="48" height="16"/>
-  <object id="40" type="Platform" x="304" y="208" width="48" height="16"/>
-  <object id="41" type="Platform" x="512" y="160" width="48" height="16"/>
-  <object id="42" x="160" y="160" width="48" height="16"/>
-  <object id="44" x="352" y="128" width="48" height="16"/>
-  <object id="45" x="448" y="96" width="48" height="16"/>
+  <object id="38" type="Platform" x="48" y="144" width="64" height="16"/>
+  <object id="39" type="Platform" x="224" y="96" width="64" height="16"/>
+  <object id="40" type="Platform" x="288" y="208" width="64" height="16"/>
+  <object id="41" type="Platform" x="512" y="160" width="64" height="16"/>
+  <object id="42" x="160" y="160" width="64" height="16"/>
+  <object id="44" x="336" y="128" width="64" height="16"/>
+  <object id="45" x="432" y="96" width="64" height="16"/>
   <object id="46" x="208" y="208" width="32" height="32"/>
   <object id="47" x="176" y="240" width="32" height="32"/>
   <object id="48" x="208" y="240" width="32" height="32"/>
@@ -59,7 +59,7 @@
   <object id="57" x="80" y="240" width="32" height="32"/>
  </objectgroup>
  <objectgroup id="2" name="Spawnpoints">
-  <object id="2" name="Player" type="Player" x="48" y="176" width="32" height="32"/>
+  <object id="2" name="Player" type="Player" x="48" y="160" width="32" height="32"/>
   <object id="58" name="Apple" type="Fruit" x="48" y="64" width="32" height="32"/>
   <object id="59" name="Orange" type="Fruit" x="48" y="112" width="32" height="32"/>
   <object id="63" name="Apple" type="Fruit" x="80" y="64" width="32" height="32"/>
