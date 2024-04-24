@@ -39,7 +39,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation disappearingAnimation;
 
   final double _gravity = 9.8;
-  final double _jumpForce = 270;
+  final double _jumpForce = 260;
   final double _terminalVelocity = 300;
   double horizontalMovement = 0;
   double moveSpeed = 100;
@@ -101,12 +101,8 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     if (!reachedCheckpoint) {
-      if (other is Fruit) {
-        other.collidedWithPlayer();
-      }
-      if (other is Saw) {
-        _respawn();
-      }
+      if (other is Fruit) other.collidedWithPlayer();
+      if (other is Saw) _respawn();
       if (other is Checkpoint) _reachedCheckpoint();
     }
 
@@ -118,7 +114,7 @@ class Player extends SpriteAnimationGroupComponent
     runningAnimation = _spriteAnimation("Run", 12);
     jumpingAnimation = _spriteAnimation("Jump", 1);
     fallingAnimaton = _spriteAnimation("Fall", 1);
-    hitAnimation = _spriteAnimation("Hit", 7);
+    hitAnimation = _spriteAnimation("Hit", 7)..loop = false;
     appearingAnimation = _specialSpriteAnimation("Appearing", 7);
     disappearingAnimation = _specialSpriteAnimation("Disappearing", 7);
 
@@ -149,7 +145,7 @@ class Player extends SpriteAnimationGroupComponent
 
   SpriteAnimation _specialSpriteAnimation(String state, int amount) {
     return SpriteAnimation.fromFrameData(
-      game.images.fromCache("Main Characters/Appearing (96x96).png"),
+      game.images.fromCache("Main Characters/$state (96x96).png"),
       SpriteAnimationData.sequenced(
         amount: amount,
         stepTime: stepTime,
@@ -268,17 +264,17 @@ class Player extends SpriteAnimationGroupComponent
     if (scale.x > 0) {
       position = position - Vector2.all(32);
     } else if (scale.x < 0) {
-      position = position + Vector2.all(32);
+      position = position + Vector2(32, -32);
     }
     current = PlayerState.disappearing;
     const reachedCheckpointDuration = Duration(milliseconds: 350);
     Future.delayed(reachedCheckpointDuration, () {
       reachedCheckpoint = false;
-      position = Vector2.all(-640);
-
+      removeFromParent();
       const waitToChangeDuration = Duration(seconds: 3);
       Future.delayed(waitToChangeDuration, () {
-        //switch level
+        game.loadNextLevel();
+        _respawn();
       });
     });
   }
