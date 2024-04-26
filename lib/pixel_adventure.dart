@@ -5,18 +5,23 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flutter/painting.dart';
+import 'package:pixel_adventure/components/jump_button.dart';
 import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
 
 class PixelAdventure extends FlameGame
-    with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection {
+    with
+        HasKeyboardHandlerComponents,
+        DragCallbacks,
+        HasCollisionDetection,
+        TapCallbacks {
   @override
   Color backgroundColor() => const Color(0xFF211F30);
 
   late CameraComponent cam;
   Player player = Player(character: "Mask Dude");
   late JoystickComponent joyStick;
-  bool showJoyStick = false; // for mobile
+  bool showControls = true; // for mobile
   List<String> levelNames = ["level-01", "level-02"];
   int currentLevelIndex = 0;
 
@@ -26,8 +31,9 @@ class PixelAdventure extends FlameGame
     await images.loadAllImages();
 
     _loadLevel();
-    if (showJoyStick) {
+    if (showControls) {
       addJoyStick();
+      add(JumpButton());
     }
 
     return super.onLoad();
@@ -35,7 +41,7 @@ class PixelAdventure extends FlameGame
 
   @override
   void update(double dt) {
-    if (showJoyStick) {
+    if (showControls) {
       _updateJoyStick();
     }
     super.update(dt);
