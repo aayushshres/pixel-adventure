@@ -56,6 +56,8 @@ class Player extends SpriteAnimationGroupComponent
     width: 14,
     height: 28,
   );
+  double fixedDeltaTime = 1 / 60;
+  double accumulatedTime = 0;
 
   @override
   FutureOr<void> onLoad() {
@@ -70,12 +72,17 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void update(double dt) {
-    if (!gotHit && !reachedCheckpoint) {
-      _updatePlayerState();
-      _updatePlayerMovement(dt);
-      _checkHorizontalCollisions();
-      _applyGravity(dt);
-      _checkVerticalCollisions();
+    accumulatedTime += dt;
+
+    while (accumulatedTime >= fixedDeltaTime) {
+      if (!gotHit && !reachedCheckpoint) {
+        _updatePlayerState();
+        _updatePlayerMovement(fixedDeltaTime);
+        _checkHorizontalCollisions();
+        _applyGravity(fixedDeltaTime);
+        _checkVerticalCollisions();
+      }
+      accumulatedTime -= fixedDeltaTime;
     }
 
     super.update(dt);

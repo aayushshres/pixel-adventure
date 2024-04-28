@@ -21,7 +21,7 @@ class PixelAdventure extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: "Mask Dude");
   late JoystickComponent joyStick;
-  bool showControls = true; // for mobile
+  bool showControls = false; // for mobile
   List<String> levelNames = ["level-01", "level-02"];
   int currentLevelIndex = 0;
 
