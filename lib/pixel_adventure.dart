@@ -22,6 +22,8 @@ class PixelAdventure extends FlameGame
   Player player = Player(character: "Mask Dude");
   late JoystickComponent joyStick;
   bool showControls = false; // for mobile
+  bool playSounds = true;
+  double soundVolume = 1.0;
   List<String> levelNames = ["level-01", "level-02"];
   int currentLevelIndex = 0;
 
@@ -30,11 +32,11 @@ class PixelAdventure extends FlameGame
     // load all images into cache
     await images.loadAllImages();
 
-    _loadLevel();
     if (showControls) {
       addJoyStick();
       add(JumpButton());
     }
+    _loadLevel();
 
     return super.onLoad();
   }
@@ -49,7 +51,7 @@ class PixelAdventure extends FlameGame
 
   void addJoyStick() {
     joyStick = JoystickComponent(
-      priority: 1,
+      priority: 10,
       knob: SpriteComponent(
         sprite: Sprite(
           images.fromCache("HUD/Knob.png"),
