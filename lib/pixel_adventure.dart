@@ -51,7 +51,7 @@ class PixelAdventure extends FlameGame
 
   void addJoyStick() {
     joyStick = JoystickComponent(
-      priority: 10,
+      priority: 1,
       knob: SpriteComponent(
         sprite: Sprite(
           images.fromCache("HUD/Knob.png"),
