@@ -11,8 +11,6 @@ void main() async {
 
   PixelAdventure game = PixelAdventure();
   runApp(
-    GameWidget(
-      game: kDebugMode ? PixelAdventure() : game,
-    ),
+    GameWidget(game: kDebugMode ? PixelAdventure() : game),
   );
 }

@@ -19,9 +19,10 @@ class Checkpoint extends SpriteAnimationComponent
       size: Vector2(12, 8),
       collisionType: CollisionType.passive,
     ));
+
     animation = SpriteAnimation.fromFrameData(
       game.images
-          .fromCache("Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png"),
+          .fromCache('Items/Checkpoints/Checkpoint/Checkpoint (No Flag).png'),
       SpriteAnimationData.sequenced(
         amount: 1,
         stepTime: 1,
@@ -41,7 +42,7 @@ class Checkpoint extends SpriteAnimationComponent
   void _reachedCheckpoint() async {
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache(
-          "Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png"),
+          'Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png'),
       SpriteAnimationData.sequenced(
         amount: 26,
         stepTime: 0.05,
@@ -51,9 +52,10 @@ class Checkpoint extends SpriteAnimationComponent
     );
 
     await animationTicker?.completed;
+
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache(
-          "Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png"),
+          'Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png'),
       SpriteAnimationData.sequenced(
         amount: 10,
         stepTime: 0.05,
