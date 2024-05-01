@@ -23,7 +23,7 @@ class PixelAdventure extends FlameGame
   bool showControls = false;
   bool playSounds = true;
   double soundVolume = 1.0;
-  List<String> levelNames = ['Level-01', 'Level-01'];
+  List<String> levelNames = ['level-01', 'level-02'];
   int currentLevelIndex = 0;
 
   @override
