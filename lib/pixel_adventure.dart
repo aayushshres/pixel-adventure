@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:flame/input.dart';
 import 'package:flutter/painting.dart';
 import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
@@ -18,7 +17,6 @@ class PixelAdventure extends FlameGame
   Color backgroundColor() => const Color(0xFF211F30);
   late CameraComponent cam;
   Player player = Player(character: 'Mask Dude');
-  late JoystickComponent joystick;
   bool playSounds = true;
   double soundVolume = 1.0;
   List<String> levelNames = ['level-01', 'level-02'];
@@ -58,8 +56,9 @@ class PixelAdventure extends FlameGame
         world: world,
         width: 640,
         height: 360,
-      );
-      cam.viewfinder.anchor = Anchor.topLeft;
+      )
+        ..priority = 0
+        ..viewfinder.anchor = Anchor.topLeft;
 
       addAll([cam, world]);
     });
