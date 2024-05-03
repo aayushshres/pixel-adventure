@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "test-level.tmx",
+    "activeFile": "level-01.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -21,8 +21,8 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 483.5,
-                "y": 249
+                "x": 314.5,
+                "y": 211
             }
         },
         "level-02.tmx": {
@@ -76,9 +76,9 @@
     "project": "Pixel Adventure.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "level-01.tmx",
-        "level-02.tmx",
         "test-level.tmx",
+        "level-02.tmx",
+        "level-01.tmx",
         "level-03.tmx",
         "Pixel Adventure.tsx"
     ],

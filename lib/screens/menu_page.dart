@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pixel_adventure/screens/game_play.dart';
 import 'package:pixel_adventure/widgets/custom_button.dart';
@@ -38,32 +39,78 @@ class _MainMenuState extends State<MainMenu> {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.micro5(
                         textStyle: const TextStyle(
-                      color: Colors.white,
+                      color: Color(0xFFFCBD80),
                       fontSize: 80,
                       fontWeight: FontWeight.bold,
                       shadows: <Shadow>[
                         Shadow(
                           offset: Offset(2, 2),
                           blurRadius: 3.0,
-                          color: Color.fromARGB(255, 0, 0, 0),
+                          color: Color(0xFF451B0B),
+                        ),
+                        Shadow(
+                          offset: Offset(3, 3),
+                          blurRadius: 3.0,
+                          color: Color(0xFF5D2E1C),
+                        ),
+                        Shadow(
+                          offset: Offset(3, 3),
+                          blurRadius: 3.0,
+                          color: Color(0xFFB47C57),
                         ),
                       ],
                     )),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => const GamePlay()));
-                    },
-                    child: const Text("Play"),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      // Play Button
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => const GamePlay()));
+                      },
+                      child: const CustomButton(
+                        imagePath: "assets/images/HUD/PlayButton.png",
+                      ),
+                    ),
+                    GestureDetector(
+                      // Options Button
+                      onTap: () {
+                        // Navigate to settings
+                      },
+                      child: const CustomButton(
+                        imagePath: "assets/images/HUD/OptionsButton.png",
+                      ),
+                    ),
+                  ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: CustomButton(),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      // Help Button
+                      onTap: () {
+                        // Navigate to help
+                      },
+                      child: const CustomButton(
+                        imagePath: "assets/images/HUD/HelpButton.png",
+                      ),
+                    ),
+                    GestureDetector(
+                      // About Button
+                      onTap: () {
+                        // Navigate to about
+                      },
+                      child: const CustomButton(
+                        imagePath: "assets/images/HUD/AboutButton.png",
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

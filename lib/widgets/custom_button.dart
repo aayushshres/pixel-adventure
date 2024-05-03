@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  final String imagePath;
+  const CustomButton({
+    super.key,
+    required this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 100,
+      height: 38,
+      width: 142,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+        ),
       ),
     );
   }
