@@ -4,8 +4,11 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/painting.dart';
+import 'package:pixel_adventure/components/jump_button.dart';
+import 'package:pixel_adventure/components/left_button.dart';
 import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
+import 'package:pixel_adventure/components/right_button.dart';
 
 class PixelAdventure extends FlameGame
     with
@@ -30,6 +33,11 @@ class PixelAdventure extends FlameGame
     await images.loadAllImages();
 
     _loadLevel();
+    if (showControls) {
+      add(JumpButton());
+      add(RightButton());
+      add(LeftButton());
+    }
 
     return super.onLoad();
   }

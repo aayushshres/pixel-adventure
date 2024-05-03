@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pixel_adventure/screens/game_play.dart';
+import 'package:pixel_adventure/widgets/custom_button.dart';
 
 class MainMenu extends StatefulWidget {
   const MainMenu({super.key});
@@ -59,6 +60,10 @@ class _MainMenuState extends State<MainMenu> {
                     },
                     child: const Text("Play"),
                   ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CustomButton(),
                 ),
               ],
             ),
