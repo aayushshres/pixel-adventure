@@ -14,9 +14,11 @@ class PixelAdventure extends FlameGame
         HasCollisionDetection,
         TapCallbacks {
   @override
-  Color backgroundColor() => const Color(0xFF211F30);
+  Color backgroundColor() => const Color(0xFF000000);
   late CameraComponent cam;
   Player player = Player(character: 'Mask Dude');
+  late JoystickComponent joystick;
+  bool showControls = true;
   bool playSounds = true;
   double soundVolume = 1.0;
   List<String> levelNames = ['level-01', 'level-02'];
