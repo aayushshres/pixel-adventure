@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level-01.tmx",
+    "activeFile": "test-level.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -15,26 +15,26 @@
         },
         "level-01.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 1,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 330,
+                "x": 314.5,
                 "y": 211
             }
         },
         "level-02.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 0.9162,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 361.2748308229644,
-                "y": 276.14058065924473
+                "x": 361.8205631958088,
+                "y": 277.2320454049334
             }
         },
         "level-03.tmx": {
@@ -50,11 +50,15 @@
             }
         },
         "test-level.tmx": {
-            "scale": 1.085078125,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 0.75,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 317.48866009071935,
-                "y": 184.3185254517964
+                "x": 358,
+                "y": 270.66666666666663
             }
         }
     },
@@ -73,8 +77,9 @@
     "property.type": "string",
     "recentFiles": [
         "level-01.tmx",
-        "level-03.tmx",
         "level-02.tmx",
+        "test-level.tmx",
+        "level-03.tmx",
         "Pixel Adventure.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",

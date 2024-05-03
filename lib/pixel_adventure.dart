@@ -48,7 +48,7 @@ class PixelAdventure extends FlameGame
   }
 
   void _loadLevel() {
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       Level world = Level(
         player: player,
         levelName: levelNames[currentLevelIndex],
