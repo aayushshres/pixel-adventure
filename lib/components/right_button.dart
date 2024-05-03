@@ -8,16 +8,20 @@ class RightButton extends SpriteComponent
     with HasGameRef<PixelAdventure>, TapCallbacks {
   RightButton();
 
-  final double margin = 608;
-  final double buttonSize = 32;
-
   @override
   FutureOr<void> onLoad() {
+    double screenWidth = game.size[0];
+    double screenHeight = game.size[1];
+    double xmargin = screenWidth * 0.90; // 10% of screen width
+    double ymargin = screenHeight * 0.02; // 2% of screen height
+
+    double buttonSize = screenWidth * 0.08; // 8% of screen width
+    double buttonGap = screenWidth * 0.05; // 5% of screen width
     sprite = Sprite(game.images.fromCache('HUD/RightButton.png'));
     size = Vector2.all(buttonSize);
     position = Vector2(
-      game.size.x - 560 - buttonSize,
-      game.size.y - 32 - buttonSize,
+      screenWidth - xmargin + buttonSize + buttonGap,
+      screenHeight - ymargin - buttonSize,
     );
     priority = 10;
     return super.onLoad();
