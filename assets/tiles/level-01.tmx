@@ -74,13 +74,13 @@
  </objectgroup>
  <objectgroup id="2" name="Spawnpoints">
   <object id="260" name="Player" type="Player" x="32" y="256" width="32" height="32"/>
-  <object id="261" name="Chicken" type="Chicken" x="240" y="96" width="32" height="32" rotation="-1">
+  <object id="261" name="Chicken" type="Enemies" x="240" y="96" width="32" height="32" rotation="-1">
    <properties>
     <property name="offNeg" type="float" value="4"/>
     <property name="offPos" type="float" value="0"/>
    </properties>
   </object>
-  <object id="262" name="Chicken" type="Chicken" x="368" y="96" width="32" height="32">
+  <object id="262" name="Mushroom" type="Enemies" x="368" y="96" width="32" height="32">
    <properties>
     <property name="offNeg" type="float" value="0"/>
     <property name="offPos" type="float" value="4"/>

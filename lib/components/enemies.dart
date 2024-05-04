@@ -9,13 +9,15 @@ import 'package:pixel_adventure/pixel_adventure.dart';
 
 enum State { idle, run, hit }
 
-class Chicken extends SpriteAnimationGroupComponent
+class Enemies extends SpriteAnimationGroupComponent
     with HasGameRef<PixelAdventure>, CollisionCallbacks {
   final double offNeg;
   final double offPos;
-  Chicken({
+  final String enemy;
+  Enemies({
     super.position,
     super.size,
+    this.enemy = "Chicken",
     this.offNeg = 0,
     this.offPos = 0,
   });
@@ -79,7 +81,7 @@ class Chicken extends SpriteAnimationGroupComponent
 
   SpriteAnimation _spriteAnimation(String state, int amount) {
     return SpriteAnimation.fromFrameData(
-      game.images.fromCache('Enemies/Chicken/$state (32x34).png'),
+      game.images.fromCache('Enemies/$enemy/$state.png'),
       SpriteAnimationData.sequenced(
         amount: amount,
         stepTime: stepTime,
@@ -98,12 +100,12 @@ class Chicken extends SpriteAnimationGroupComponent
     velocity.x = 0;
 
     double playerOffset = (player.scale.x > 0) ? 0 : -player.width;
-    double chickenOffset = (scale.x > 0) ? 0 : -width;
+    double enemyOffset = (scale.x > 0) ? 0 : -width;
 
     if (playerInRange()) {
       // player in range
       targetDirection =
-          (player.x + playerOffset < position.x + chickenOffset) ? -1 : 1;
+          (player.x + playerOffset < position.x + enemyOffset) ? -1 : 1;
       velocity.x = targetDirection * runSpeed;
     }
 
