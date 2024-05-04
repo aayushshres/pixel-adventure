@@ -1,6 +1,6 @@
 {
-    "name": "pixel_adventure",
-    "short_name": "pixel_adventure",
+    "name": "Pixel Adventure",
+    "short_name": "Pixel Adventure",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",
