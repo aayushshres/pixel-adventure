@@ -3,8 +3,6 @@
 A **2D Pixel Art Platformer Game** built with **Flutter** and powered by the **Flame game engine**.  
 This project demonstrates how to build a game with **Flutter Flame** while managing state using **BLoC**.
 
----
-
 ## 🚀 Features
 
 - 🌟 Classic 2D pixel art style
@@ -14,16 +12,12 @@ This project demonstrates how to build a game with **Flutter Flame** while manag
 - 📱 Built entirely with **Flutter** (cross-platform mobile support)
 - 🔥 Powered by the **Flame Engine**
 
----
-
 ## 🛠️ Tech Stack
 
 - **Flutter** – Cross-platform framework
 - **Flame** – Lightweight 2D game engine for Flutter
 - **BLoC** – State management for game logic and UI
 - **Dart** – Core programming language
-
----
 
 ## ▶️ Getting Started
 
@@ -48,20 +42,14 @@ flutter pub get
 flutter run
 ```
 
----
-
 ## 🎮 Controls
 
 - Tap (button) – Move player
 - Tap (button) – Jump
 
----
-
 ## 📸 Screenshots
 
 ![1716014221152](image/README/1716014221152.png)
-
----
 
 ## 🤝 Contribution
 
